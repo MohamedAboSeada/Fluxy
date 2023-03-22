@@ -1,0 +1,589 @@
+@font-face{
+	font-family: main-font;
+	src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face{
+	font-family: light-font;
+	src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face{
+	font-family: bold-font;
+	src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+body{
+	padding:0;
+	font-family: main-font;
+}
+*{
+	margin:0;
+	box-sizing: border-box;
+	font-family: main-font;
+}
+/* styling header */
+header{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+/* styling deal */
+header .deal{
+	text-align: center;
+	padding: 10px;
+	background-color: #000;
+}
+header .deal a{
+	text-decoration-line: none;
+	color: #fff;
+}
+/* styling nav */
+header nav{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 70px;
+	background-color: #222;
+	align-items: center;
+	color: #fff;
+}
+
+header nav .logo{
+	margin-left: 45px;
+}
+header nav .logo a{
+	text-decoration: none;
+	color: #fff;
+}
+header nav .logo h1::first-letter{
+	color: tomato;
+}
+header nav .buttons{
+	margin-right: 45px;
+}
+header nav .buttons button{
+	outline: none;
+	background-color: tomato;
+	color: #fff;
+	border: 2px solid tomato;
+	cursor: pointer;
+	transition: 100ms;
+	border-radius: 10px;
+	font-family: inherit;
+	padding: 10px 15px;
+}
+header nav .buttons button:hover{
+	background-color: transparent;
+	color: tomato;
+}
+header nav .menu ul{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 10px;
+}
+
+header nav .menu ul li{
+	padding: 10px;
+}
+header nav .menu ul li a{
+	text-decoration: none;
+	color: #fff;
+	transition: 100ms;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+header nav .menu ul li a:hover{
+	color: tomato;
+}
+.ham{
+	display: none;
+	visibility: hidden;
+}
+/* deals slider */
+.black{
+	padding: 10px;
+	background-image: linear-gradient(to bottom,#222,transparent);
+}
+.deals{
+	width: 97%;
+	margin:25px auto;
+	display: flex;
+	gap: 10px;
+	height: 600px;
+}
+.deals .image1{
+	border-radius: 10px;
+	position: relative;
+	background-image: url("../images/PlayStation-Ramadan-Deals-2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50%;
+	cursor: pointer;
+	height: 100%;
+}
+.deals .right{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	gap: 10px;
+	height: 100%;
+}
+.deals .right .image2,.deals .right .image3{
+	background-size: cover;
+	cursor: pointer;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	border-radius: 10px;
+	height: 50%;
+}
+.deals .right .image2::after,
+.deals .right .image3::after,
+.deals .image1::after{
+	position: absolute;
+	background-color: #000;
+	width: 100%;
+	opacity: 0;
+	height: 100%;
+	transition: opacity 100ms;
+	border-radius: 10px;
+	content: "";
+}
+.deals .right .image2:hover::after,
+.deals .right .image3:hover::after,
+.deals .image1:hover::after{
+	opacity: 0.5;
+}
+.deals .right .image2{
+	background-image: url("../images/XCM_Manual_1540528_5386341_3000x1200_2X.jpg");
+}
+.deals .right .image3{
+	background-position: bottom;
+	background-image: url("../images/XCM_Manual_1540528_5386629_1500x599_2X.jpg");
+}
+/* styling best selling */
+.grid{
+	width: 97%;
+	margin: 0 auto;
+	gap: 20px;
+	display: flex;
+	flex-direction: column;
+}
+.grid h1{
+	text-align: center;
+}
+.grid .tags{
+	overflow: auto;
+}
+.grid .tags ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	gap: 10px;
+}
+.grid .tags ul li a{
+	text-decoration: none;
+	color: #111;
+	display: flex;
+	gap: 5px;
+	border: 1px solid #111;
+	padding: 10px 20px;
+	border-radius: 25px;
+	background-color: transparent;
+}
+.grid .tags ul li a#hot,
+.grid .tags ul li a#trend{
+	background-color: #111;
+	color: #fff;
+}
+.grid .tags ul li a:hover{
+	background-color: #111;
+	color: #fff;
+}
+/* prodcts styling */
+
+.products{
+	display: flex;
+	gap: 10px;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+.products div[class^="n"]{
+	position: relative;
+	width: calc(100% / 5);
+	padding: 20px;
+	gap: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 1px solid darkgray;
+	height: 500px;
+}
+.products div[class^="n"] .stars{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border: 1px solid #111;
+	padding: 10px;
+	border-radius: 25px;
+}
+.products div[class^="n"] .image{
+	margin-top: 10px;
+}
+.products div[class^="n"] .image img{
+	width: 200px;
+}
+.products div[class^="n"] .discription{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.products div[class^="n"] .discription button{
+	border: 1px solid #111;
+	background-color: transparent;
+	padding: 10px;
+	cursor: pointer;
+	outline: none;
+	transition: 100ms;
+}
+.products div[class^="n"] .discription button:hover{
+	background-color: tomato;
+	color: #fff;
+}
+.ramadan{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.ramadan img{
+	width: 100px;
+}
+/* servises */
+.features{
+	display: flex;
+	margin: 20px auto;
+	width: 97%;
+	color: #fff;
+	text-align: center;
+	background-image: linear-gradient(45deg,#000,#333);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 300px;
+	padding: 1px;
+	width: ;
+}
+.features div{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.features div i{
+	font-size: 50px;
+	color: tomato;
+}
+.features .text h3{
+	font-size: 30px;
+}
+.features .text p{
+	font-size: 18px;
+}
+.discover{
+	width: 97%;
+	margin: 20px auto;
+	display: flex;
+	align-items: center;
+	height: 400px;
+	background-image: url("../images/ar_nmc.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+	flex-direction: row;
+	padding: 10px;
+	position: relative;
+}
+.discover img{
+	width: 400px;
+}
+.discover .black-d{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(0 0 0 / 95%);
+}
+.discover .black-d .text2{
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: flex-start;
+}
+.discover .black-d .text2 button{
+	padding: 10px 20px;
+	width: 200px;
+	border-radius: 10px;
+	background-color: transparent;
+	color: #fff;
+	transition: 300ms;
+	cursor: pointer;
+	border: 3px solid #fff;
+}
+.discover .black-d .text2 button:hover{
+	background-color: #fff;
+	color: #000;
+}
+.discover .black-d .text2 h3{
+	font-size: 50px;
+}
+/* styling contact section */
+.contact{
+	margin: 20px auto;
+	width: 97%;
+	height: 500px;
+	gap: 50px;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+.contact form{
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	gap: 20px;
+}
+.contact form input[type="email"],
+textarea,
+.contact form input[type="text"]{
+	padding: 10px 20px;
+	border:none;
+	outline: none;
+	resize: none;
+	border-bottom: 2px solid #111;
+}
+.contact form input[type="email"]:focus,
+textarea:focus,
+.contact form input[type="text"]:focus{
+	border-bottom: 2px solid tomato;
+}
+.contact form input[type="submit"]{
+	width: 200px;
+	background-color: transparent;
+	color: tomato;
+	border: 2px solid tomato;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	transition: 100ms;
+	padding: 10px 20px;
+}
+.contact form input[type="submit"]:hover{
+	background-color: tomato;
+	color: #fff;
+}
+.contact textarea{
+	height: 130px;
+}
+.contact form h1{
+	font-size: 40px;
+	font-family: bold-font;
+}
+.contact .info::after{
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	background-color: tomato;
+	width: 70px;
+	height: 70px;
+
+}
+.contact .info{
+	position: relative;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-image: linear-gradient(45deg,#000,#333);
+	height: 100%;
+	padding: 20px;
+	border-radius: 10px;
+	color: #fff;
+}
+.contact .info h1{
+	font-size: 40px;
+}
+.contact .info h1 span{
+	color: red;
+}
+
+.contact .info ul{
+	list-style: none;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+}
+.contact .info ul li{
+	padding: 10px;
+	text-align: center;
+}
+.contact .info ul li a i{
+	color: gold;
+}
+.contact .info ul li a{
+	display: flex;
+	gap: 5px;
+	font-size: 18px;
+	transition: 100ms;
+	text-decoration: none;
+	color: #fff;
+}
+.contact .info ul li a:hover{
+	color: gold;
+}
+footer{
+	background-image: linear-gradient(45deg,#000,#111);
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	color: #fff;
+	align-items: center;
+	justify-content: center;
+	height: 200px;
+}
+footer .up{
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+footer .up ul{
+	display: flex;
+	gap: 10px;
+	list-style: none;
+	color: #fff;
+}
+footer .up h1:first-letter{
+	color: tomato;
+}
+footer .up ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 10px;
+	font-family: bold-font;
+}
+footer .line{
+	width: 90%;
+	margin: 0 auto;
+	background-color: darkgray;
+	height: 1px;
+}
+/* media for nav bar */
+@media (max-width: 1000px){
+	.ham{
+		display: inline;
+		visibility: visible;
+	}
+	header .menu{
+		display: none;
+	}
+	.deals{
+		flex-direction: column;
+	}
+	.deals .image1,
+	.deals .right{
+		width: 100%;
+	}
+	header nav .logo{
+		margin-left: 20px;
+	}
+
+	header nav .buttons{
+		margin-right: 20px;
+	}
+	.features{
+		height: 700px;
+		flex-direction: column;
+	}
+	.features .text h1{
+		font-size: 25px;
+	}
+	.features .text p{
+		font-size: 15px;
+	}
+	.discover .black-d{
+		flex-direction: column;
+	}
+	.discover .black-d .text2{
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+	}
+	.discover .black-d img{
+		width: 150px;
+	}
+	.contact{
+		flex-direction: column;
+	}
+	.contact form{
+		text-align: center;
+		width: 100%;
+	}
+	.contact .info{
+		width: 100%;
+		text-align: center;
+	}
+	.contact .info::after{
+		width: 50px;
+		height: 50px;
+	}
+	footer{
+		height: 400px;
+		margin-top: 500px;
+	}
+	footer h1{
+		align-self: center;
+		text-align: center;
+	}
+	footer .up{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	footer .up ul{
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media (max-width: 727px){
+	#sign{
+		display: none;
+	}
+}
+@media (max-width: 1300px){
+	.products{
+		flex-direction: column;
+	}
+	.products div[class*="n"]{
+		width: 100%;
+	}
+}
